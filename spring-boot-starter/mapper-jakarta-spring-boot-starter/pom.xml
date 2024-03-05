@@ -77,7 +77,8 @@
         </dependency>
         <dependency>
             <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-spring-boot-autoconfigure</artifactId>
+            <artifactId>mapper-jakarta-spring-boot-autoconfigure</artifactId>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>
