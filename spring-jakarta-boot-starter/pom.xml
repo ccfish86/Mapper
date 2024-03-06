@@ -31,23 +31,24 @@
         <artifactId>mapper-modules</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>mapper-spring-boot</artifactId>
+    <artifactId>mapper-jakarta-spring-boot</artifactId>
     <packaging>pom</packaging>
 
-    <name>mapper-spring-boot</name>
-    <description>Spring Boot Support for Mapper</description>
+    <name>mapper-jakarta-spring-boot</name>
+    <description>Spring Boot 3 Support for Mapper</description>
     <url>https://github.com/abel533/mapper-boot-starter/</url>
 
     <modules>
-        <module>mapper-spring-boot-autoconfigure</module>
-        <module>mapper-spring-boot-starter</module>
-        <module>mapper-spring-boot-samples</module>
+        <!-- for spring boot 3 -->
+        <module>mapper-jakarta-spring-boot-autoconfigure</module>
+        <module>mapper-jakarta-spring-boot-starter</module>
+        <module>mapper-jakarta-spring-boot-samples</module>
     </modules>
 
     <properties>
-        <mybatis.version>3.5.9</mybatis.version>
-        <mybatis-spring.version>2.0.7</mybatis-spring.version>
-        <spring-boot.version>2.6.4</spring-boot.version>
+        <jakarta-mybatis.version>3.5.15</jakarta-mybatis.version>
+        <jakarta-mybatis-spring.version>3.0.3</jakarta-mybatis-spring.version>
+        <jakarta-spring-boot.version>3.2.1</jakarta-spring-boot.version>
     </properties>
 
     <repositories>
@@ -105,12 +106,12 @@
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
+                <version>${jakarta-mybatis.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis-spring.version}</version>
+                <version>${jakarta-mybatis-spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>tk.mybatis</groupId>
@@ -125,7 +126,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${jakarta-spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

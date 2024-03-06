@@ -15,7 +15,7 @@
   ~ all copies or substantial portions of the Software.
   ~
   ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES Omybatis-spring-boot-autoconfiguremybatis-spring-boot-autoconfigureF MERCHANTABILITY,
   ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
   ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
   ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
@@ -28,59 +28,57 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>tk.mybatis</groupId>
-        <artifactId>mapper-spring-boot</artifactId>
+        <artifactId>mapper-jakarta-spring-boot</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>mapper-jakarta-spring-boot-autoconfigure</artifactId>
-    <name>mapper-spring-boot-autoconfigure</name>
-
+    <artifactId>mapper-jakarta-spring-boot-starter</artifactId>
+    <name>mapper-jakarta-spring-boot-starter</name>
+    <description>Spring Boot 3 Support for Mapper</description>
     <dependencies>
-        <!-- Compile dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
             <version>${jakarta-spring-boot.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-core</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-spring</artifactId>
-            <optional>true</optional>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>${jakarta-spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>${jakarta-mybatis.version}</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>${jakarta-mybatis-spring.version}</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <version>${jakarta-spring-boot.version}</version>
-            <optional>true</optional>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <optional>true</optional>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-weekend</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-extra</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-jakarta-spring-boot-autoconfigure</artifactId>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>

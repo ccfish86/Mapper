@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
   ~ The MIT License (MIT)
   ~
@@ -22,39 +23,41 @@
   ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   ~ THE SOFTWARE.
   -->
-
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>tk.mybatis</groupId>
-        <artifactId>mapper-spring-boot</artifactId>
+        <artifactId>mapper-jakarta-spring-boot-samples</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>mapper-jakarta-spring-boot-samples</artifactId>
-    <packaging>pom</packaging>
-    <name>mapper-spring-boot-samples</name>
-    <modules>
-        <module>mapper-jakarta-spring-boot-sample-annotation</module>
-    </modules>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>ognl</groupId>
-                <artifactId>ognl</artifactId>
-                <version>3.1.2</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javassist</groupId>
-                        <artifactId>javassist</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.javassist</groupId>
-                <artifactId>javassist</artifactId>
-                <version>3.20.0-GA</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <artifactId>mapper-jakarta-spring-boot-sample-annotation</artifactId>
+    <packaging>jar</packaging>
+    <name>mapper-spring-boot-sample-annotation</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-jakarta-spring-boot-starter</artifactId>
+        	<version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${jakarta-spring-boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
